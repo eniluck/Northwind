@@ -51,10 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Customers.cs" />
     <Compile Include="Model\Employees.cs" />
     <Compile Include="Model\EmployeeTerritories.cs" />
+    <Compile Include="Model\OrderDetails.cs" />
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Model\Shippers.cs" />
     <Compile Include="Model\Suppliers.cs" />
     <Compile Include="Model\Territories.cs" />
+    <Compile Include="TerritoriesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
