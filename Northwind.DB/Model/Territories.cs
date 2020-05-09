@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.DB.Model
 {
-    class Territories
+    public class Territories
     {
         [Key]
         public string TerritoryID { get; set; }
