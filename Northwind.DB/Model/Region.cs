@@ -13,6 +13,6 @@ namespace Northwind.DB.Model
         [Key]
         public int RegionID { get; set; }
         [MaxLength(50)]
-        public int RegionDescription { get; set; }
+        public string RegionDescription { get; set; }
     }
 }

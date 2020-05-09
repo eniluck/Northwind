@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.DB\Northwind.DB.csproj">
+      <Project>{09f3591c-6f42-433b-a686-28ecba40851c}</Project>
+      <Name>Northwind.DB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

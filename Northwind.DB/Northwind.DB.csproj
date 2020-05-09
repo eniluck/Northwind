@@ -64,6 +64,7 @@
     <Compile Include="Model\Shippers.cs" />
     <Compile Include="Model\Suppliers.cs" />
     <Compile Include="Model\Territories.cs" />
+    <Compile Include="RegionRepository.cs" />
     <Compile Include="TerritoriesRepository.cs" />
   </ItemGroup>
   <ItemGroup>

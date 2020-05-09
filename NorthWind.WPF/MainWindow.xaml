@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthWind.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Region CRUD" Height="450" Width="800">
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="359*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ButtonsGrid" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnSelectAll" Content="Выбрать все" Click="btnSelectAll_Click" Margin="5"></Button>
+            <Button Grid.Column="1" x:Name="btnNew" Content="Новый" Click="btnNew_Click" Margin="5"></Button>
+            <Button Grid.Column="2" x:Name="btnDelete" Content="Удалить" Click="btnDelete_Click" Margin="5"></Button>
+            <Button Grid.Column="3" x:Name="btnEdit" Content="Редактировать" Click="btnEdit_Click" Margin="5"></Button>
+        </Grid>
+
+        <ListView Grid.Row="1" x:Name="listView_Region"   Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ИД" 
+                                    Width="100" 
+                                    DisplayMemberBinding="{Binding RegionID}">
+                    </GridViewColumn>
+                    <GridViewColumn Header="Описание" 
+                                    Width="200" 
+                                    DisplayMemberBinding="{Binding RegionDescription}">
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
