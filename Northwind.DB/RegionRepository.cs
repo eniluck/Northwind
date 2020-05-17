@@ -36,12 +36,20 @@ namespace Northwind.DB
             }
         }
 
+        /// <summary>
+        /// Создать новый регион
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int Create(Region entity)
         {
             using (IDbConnection db = new SqlConnection(connectionString))
             {
-                var sqlQuery = "INSERT INTO Region (RegionID, RegionDescription) VALUES(@RegionID, @RegionDescription)";
-                return db.Execute(sqlQuery, entity);
+                var sqlQuery = @"Declare @ID int;
+                                 select @ID = max(RegionID)+1 from Region
+                                 INSERT INTO Region (RegionID, RegionDescription) VALUES(@ID, @RegionDescription)
+                                 select @ID";
+                return db.Query<int>(sqlQuery, new { RegionDescription = entity.RegionDescription }).Single();
             }
         }
 

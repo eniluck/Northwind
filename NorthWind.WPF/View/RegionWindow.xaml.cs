@@ -29,5 +29,7 @@ namespace NorthWind.WPF.View
             InitializeComponent();
             DataContext = new RegionWindowViewModel();
         }
+
+       
     }
 }

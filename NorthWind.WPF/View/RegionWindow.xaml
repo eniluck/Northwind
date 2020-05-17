@@ -27,19 +27,22 @@
             <Button Grid.Column="0" 
                     x:Name="btnSelectAll" 
                     Content="Выбрать все" 
-                    Click="btnSelectAll_Click"></Button>
+                    Command="{Binding SelectAllCommand}"
+                     />
             <Button Grid.Column="1" 
                     x:Name="btnNew" 
                     Content="Новый" 
-                    Click="btnNew_Click"></Button>
+                    Command="{Binding AddRegionCommand}"/>
             <Button Grid.Column="2" 
                     x:Name="btnDelete" 
                     Content="Удалить" 
-                    Click="btnDelete_Click"></Button>
+                    Command="{Binding RemoveRegionCommand}"
+                    CommandParameter="{Binding SelectedRegion}"
+                    />
             <Button Grid.Column="3" 
                     x:Name="btnEdit" 
                     Content="Редактировать" 
-                    Click="btnEdit_Click"></Button>
+                    />
         </Grid>
 
         <ListView Grid.Row="1" x:Name="listView_Region" Grid.ColumnSpan="2" ItemsSource="{Binding Regions}"
